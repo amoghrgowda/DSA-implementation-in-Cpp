@@ -17,7 +17,7 @@ int main(){
         b.push_back(value);
     }
      for(int i=b.size()-1;i>=0;i--)
-    {   cout<<"cur size:"<<b.size()<<endl;
+    {   cout<<"current size:"<<b.size()<<endl;
         b.pop_back();
         cout<<b[i]<<"\n";
     }
