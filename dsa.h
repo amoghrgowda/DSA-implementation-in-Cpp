@@ -1,3 +1,5 @@
+#ifndef LINEAR_SEARCH_H
+#define LINEAR_SEARCH_H
 #include <iostream>
 int linearSearch(int array[],int size, int key){
     int index;
@@ -9,24 +11,7 @@ int linearSearch(int array[],int size, int key){
     }
     return index;
 }
-
-
-
-void bubleSort(int arr[], int size){
-    for(int i=0; i<size-1; i++){
-        for(int j=0; j<size-1-i; j++){
-            if(arr[j]>arr[j+1]){
-                int temp=arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
-        }
-    }
-}
-
-
-
-
+#endif
 
 
 #ifndef BINARY_SEARCH_H
@@ -48,5 +33,22 @@ int binarySearch(std::vector<int> &arr, int key)
         r = mid-1;
     }
     return -1;
+}
+#endif
+
+
+#ifndef BUBBLE_SORT_H
+#define BUBBLE_SORT_H
+#include <iostream>
+void bubbleSort(int arr[], int size){
+    for(int i=0; i<size-1; i++){
+        for(int j=0; j<size-1-i; j++){
+            if(arr[j]>arr[j+1]){
+                int temp=arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
 }
 #endif
