@@ -92,7 +92,7 @@ int insertionSort(int arr[], int size)
 #define QUICK_SORT_H
 #include <iostream>
 #include <vector>
-void swap(int &a, int &b){
+void swap1(int &a, int &b){
     int temp = a;
     a = b;
     b = temp;
@@ -104,10 +104,10 @@ int partition(std::vector<int>& arr,int low, int high){
     for(int j=low;j<=high;j++){
         if(arr[j]<pivot){
             i++;
-            swap(arr[i],arr[j]);
+            swap1(arr[i],arr[j]);
         }  
     } 
-    swap(arr[i+1],arr[high]);
+    swap1(arr[i+1],arr[high]);
     return i+1;
 }
 
@@ -135,11 +135,11 @@ a = b;
 b = temp;
 }
 
-void selectSort(int arr[],int low, int high)
+void selectionSort(int arr[],int size)
 {
-    for(int i=low;i<high;i++){
+    for(int i=0;i<size;i++){
         int min=i;
-        for(int j=i+1;j<=high;j++){
+        for(int j=i+1;j<=size;j++){
             if(arr[j]<arr[min]){
                 min = j;
             }
@@ -154,3 +154,26 @@ void selectSort(int arr[],int low, int high)
 --------------------------------------------------------------End of algo-------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+
+// Leet code top 150 interview questions
+
+#ifndef TWO_SUM_H
+#define TWO_SUM_H
+#include <iostream>
+#include <vector>
+
+std::vector<int> twoSum(std::vector<int>& arr, int target)
+{
+    size_t size = arr.size();
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]+arr[j]==target)
+            return {i,j};
+        }
+    }
+    return {};
+}
+
+#endif

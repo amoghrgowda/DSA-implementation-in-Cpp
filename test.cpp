@@ -1,12 +1,10 @@
 #include "dsa.h"
 #include <iostream>
 #include <vector>
-using namespace std;
 
-int main(){
-    vector<int> a={6,2,10,3,1};
-    quickSort(a,0,4);
-    for(int i=0;i<a.size();i++)
-    cout<<a[i]<<" ";
-    return 0;
+int main()
+{
+    std::vector<int> a={2,7,10,11,3};
+    std::vector<int>x = twoSum(a,9);
+    std::cout<<"i = "<<x[0]<<" j= "<<x[1];
 }
