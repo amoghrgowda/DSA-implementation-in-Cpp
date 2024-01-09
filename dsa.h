@@ -177,3 +177,37 @@ std::vector<int> twoSum(std::vector<int>& arr, int target)
 }
 
 #endif
+
+
+#ifndef MERGE_SORTED_H
+#define MERGE_SORTED_H
+#include <iostream>
+#include <vector>
+ void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
+        for(int i=0,j=0;i<(m+n);i++)
+        {
+            if(nums1[i]==0)
+            {
+                int k=i;
+                if(nums1[k-1]>nums2[j])
+                {
+                    while(nums1[k-1]>nums2[j])
+                    {
+                        k--;
+                    }
+                    int temp=nums1[k];
+                    nums1[k]=nums2[j];
+                    nums1[i]=temp;
+                    j++;
+                }
+                else
+                {
+                    nums1[i]=nums2[j];
+                    j++;
+                }
+            }
+        }
+
+    }
+
+#endif
