@@ -211,3 +211,35 @@ std::vector<int> twoSum(std::vector<int>& arr, int target)
     }
 
 #endif
+
+#ifndef TRAPPING_RAIN_WATER_H
+#define TRAPPING_RAIN_WATER_H
+#include <iostream>
+#include <vector>
+
+int rain(std::vector<int>& a, int size) {
+    int left = 0, right = size - 1;
+    int maxLeft = 0, maxRight = 0;
+    int volume = 0;
+
+    while (left <= right) {
+        if (a[left] <= a[right]) {
+            if (a[left] >= maxLeft) {
+                maxLeft = a[left];
+            } else {
+                volume += maxLeft - a[left];
+            }
+            left++;
+        } else {
+            if (a[right] >= maxRight) {
+                maxRight = a[right];
+            } else {
+                volume += maxRight - a[right];
+            }
+            right--;
+        }
+    }
+
+    return volume;
+}
+#endif
